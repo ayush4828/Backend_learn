@@ -26,8 +26,12 @@
 // console.log(val.g);
 // console.log(val.PI);
 
-const fal = require("./Fruits");
+// const fal = require("./Fruits");
 
-console.log(fal);
+// console.log(fal);
 
-console.log(fal[0].name);
+// console.log(fal[0].name);
+
+import {sum} from "./math.js"
+
+console.log(sum(1,2));

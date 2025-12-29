@@ -1,9 +1,9 @@
-// const sum = (a , b) => a+b;
-// const mul = (a , b) => a*b;
-// const sub = (a , b) => a-b;
-// const div = (a , b) => a/b;
-// const PI = 3.14;
-// const g = 9;
+export const sum = (a , b) => a+b;
+export const mul = (a , b) => a*b;
+export const sub = (a , b) => a-b;
+export const div = (a , b) => a/b;
+export const PI = 3.14;
+export const g = 9;
 
 // module.exports.sum = (a , b) => a+b;
 // module.exports.mul = (a , b) => a*b;
