@@ -17,11 +17,17 @@
 // }
 
 
-const val = require("./math");
+// const val = require("./math");
 
-console.log(val.sum(1,2));
-console.log(val.sub(5,2));
-console.log(val.div(9,3));
-console.log(val.mul(12,6));
-console.log(val.g);
-console.log(val.PI);
+// console.log(val.sum(1,2));
+// console.log(val.sub(5,2));
+// console.log(val.div(9,3));
+// console.log(val.mul(12,6));
+// console.log(val.g);
+// console.log(val.PI);
+
+const fal = require("./Fruits");
+
+console.log(fal);
+
+console.log(fal[0].name);

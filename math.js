@@ -5,12 +5,12 @@
 // const PI = 3.14;
 // const g = 9;
 
-module.exports.sum = (a , b) => a+b;
-module.exports.mul = (a , b) => a*b;
-module.exports.sub = (a , b) => a-b;
-module.exports.div = (a , b) => a/b;
-module.exports.PI = 3.14;
-module.exports.g = 9;
+// module.exports.sum = (a , b) => a+b;
+// module.exports.mul = (a , b) => a*b;
+// module.exports.sub = (a , b) => a-b;
+// module.exports.div = (a , b) => a/b;
+// module.exports.PI = 3.14;
+// module.exports.g = 9;
 
 // exports.sum = (a , b) => a+b;
 // exports.mul = (a , b) => a*b;
