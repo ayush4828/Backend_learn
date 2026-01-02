@@ -9,20 +9,22 @@ app.use(express.static(path.join(__dirname , "public")));
 app.use(express.urlencoded({extended:true}));
 
 let posts = [
-    {
+    { 
+
+        id:"1a",
          username:"ayush",
          content : "Full Stack Web developer"
     }
     ,
     
     {
-       
+        id:"2b",
         username:"pratham",
         content:   "problem solving  "
     }
     ,
     {
-       
+        id:"3c",
         username:"vinit",
         content:"backend expert"
 
@@ -45,4 +47,12 @@ app.post("/posts" , (req,res)=>{
     let {username , content} = req.body;
     posts.push({username,content})
     res.redirect("/posts");
+})
+
+app.get("/posts/:id" , (req,res)=>{
+     let {id} = req.params;
+     let post = posts.find((p) => id === p.id);
+    //  console.log(post);
+    res.render("show.ejs" , {post});
+     
 })
