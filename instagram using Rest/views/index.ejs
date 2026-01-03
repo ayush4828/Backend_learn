@@ -15,7 +15,11 @@
             <h3 class="user">Username : @<%=post.username%></h3>
             <p class="bio">Bio : <%=post.Bio%></p>
             <a href="/posts/<%=post.id%>" class="anchorshow">Show</a>
+            <a href="/posts/<%= post.id %>/edit" class="anchorshow">Edit</a>
            
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE" class="delete">
+                <button>Delete Account</button>
+            </form>
         </div>
 
     <%}%>

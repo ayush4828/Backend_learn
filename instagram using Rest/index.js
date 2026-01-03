@@ -83,10 +83,26 @@ app.get("/posts/:id" , (req,res)=>{
     res.render("show.ejs" , {post});
 })
 
-// app.post("/posts/new" , (req,res)=>{
-// let {img} = req.body;
-// })
+app.delete("/posts/:id",(req,res)=>{
+     let {id} = req.params;
+    posts = posts.filter((p)=> id !== p.id);
+    res.redirect("/posts");
+})
 
+app.get("/posts/:id/edit",(req,res)=>{
+    let {id} = req.params;
+    let post = posts.find((p)=> id===p.id);
+    res.render("edit.ejs" , {post})
+})
+app.patch("/posts/:id" , (req,res)=>{
+  let {id} = req.params;
+  let newContent = req.body.Bio;
+  let post = posts.find((p)=> id===p.id);
+  post.Bio = newContent;
+  res.redirect("/posts");
+
+
+})
 app.listen(port , ()=>{
     console.log(`you are listening on port : ${port}`);
 })
