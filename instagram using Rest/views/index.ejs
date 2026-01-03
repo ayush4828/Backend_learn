@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All  Posts</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">INSTAGRAM</h1>
+    <br><br><br><br>
+<div class="parent">
+    <%for(post of posts){%>
+        <div class="post"> 
+            <h3 class="user">Username : @<%=post.username%></h3>
+            <p class="bio">Bio : <%=post.Bio%></p>
+            <a href="/posts/<%=post.id%>" class="anchorshow">Show</a>
+           
+        </div>
+
+    <%}%>
+      
+    </div>
+<div class="anchor">
+    
+    <a href="/posts/new">Create A New Account</a>
+</div>
+
+
+  
+</body>
+</html>

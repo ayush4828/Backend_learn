@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Account</title>
+</head>
+<body>
+    <h1>Account Details</h1>
+    <h3 class="username">Username : @<%=post.username%></h3>
+    <p class="Bio">Bio : <%=post.Bio%></p>
+    <%for(let img of post.images){%>
+   
+         <img src="<%=img%>" alt="img" width="200" height="200">
+
+    <%}%>
+
+<form action="/posts/<%= post.id %>/image" 
+      method="post" 
+      enctype="multipart/form-data">
+       <input type="file" accept="image/*" name="image" placeholder="Click To Upload file">
+       <button>Upload</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "project-using-rest-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ayush Patel",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0",
+    "multer": "^2.0.2",
+    "uuid": "^13.0.0"
+  }
+}
