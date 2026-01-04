@@ -20,6 +20,13 @@ VALUES
 (3, 16, "casey", "casey@email.com", 300, 306),
 (4, 17, "donald", "donald@gmail.com", 200, 105);
 
+INSERT INTO users
+(id, age, name, email, followers, following)
+VALUES
+(5, 14, "eve", "eve@yahoo.in", 400, 145),
+(6, 16, "farah", "farah@gmail.com", 10000, 1000);
+
+
 SELECT * FROM users WHERE followers >= 200 ;
 SELECT age , following FROM users WHERE followers >= 200 ;
 SELECT * FROM users WHERE age +  1 = 18;
@@ -30,6 +37,21 @@ SELECT * FROM users WHERE email IN ("bob123@gmail.com", "adam@yahoo.in");
 SELECT * FROM users WHERE age NOT IN (14,16);
 SELECT * FROM users WHERE followers >= 200 LIMIT 2 ;
 SELECT * FROM users  LIMIT 2 ;
+SELECT * FROM users ORDER BY followers ASC;
+SELECT * FROM users ORDER BY followers DESC;
+SELECT * FROM users ORDER BY followers;
+SELECT MAX(followers) FROM users;
+
+SELECT COUNT(age) FROM users WHERE age>15;
+SELECT MIN(age) FROM users;
+SELECT AVG(age) FROM users;
+SELECT SUM(followers) FROM users;
+
+
+SELECT age, COUNT(id) FROM users GROUP BY age;
+
+SELECT age,MAX(followers) FROM users GROUP BY age;
+
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
