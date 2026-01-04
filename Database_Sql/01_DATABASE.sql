@@ -20,6 +20,16 @@ VALUES
 (3, 16, "casey", "casey@email.com", 300, 306),
 (4, 17, "donald", "donald@gmail.com", 200, 105);
 
+SELECT * FROM users WHERE followers >= 200 ;
+SELECT age , following FROM users WHERE followers >= 200 ;
+SELECT * FROM users WHERE age +  1 = 18;
+SELECT * FROM users WHERE age>15 AND followers>200;
+SELECT * FROM users WHERE age>15 OR followers>200;
+SELECT * FROM users WHERE age BETWEEN 15 AND 25;
+SELECT * FROM users WHERE email IN ("bob123@gmail.com", "adam@yahoo.in");
+SELECT * FROM users WHERE age NOT IN (14,16);
+SELECT * FROM users WHERE followers >= 200 LIMIT 2 ;
+SELECT * FROM users  LIMIT 2 ;
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
