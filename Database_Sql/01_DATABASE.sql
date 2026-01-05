@@ -52,6 +52,11 @@ SELECT age, COUNT(id) FROM users GROUP BY age;
 
 SELECT age,MAX(followers) FROM users GROUP BY age;
 
+-- using a having . for using a having clause there will be a grouping
+SELECT age,MAX(followers) 
+FROM users 
+GROUP BY age
+HAVING MAX(followers) >= 200;
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
