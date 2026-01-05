@@ -79,8 +79,12 @@ UPDATE users
 SET followers = 6000
 WHERE age = 16;
 
-
 SELECT * FROM users;
+
+
+-- DELETE THE FROM THE TABLE
+DELETE FROM users WHERE age = 14;
+
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
