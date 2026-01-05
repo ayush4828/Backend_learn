@@ -50,3 +50,42 @@ SELECT * FROM teacher;
 ALTER TABLE teacher
 DROP COLUMN salary;
 SELECT * FROM teacher;
+
+
+CREATE TABLE student
+(
+roll_no INT PRIMARY KEY,
+name VARCHAR(40),
+city VARCHAR(40),
+marks INT 
+);
+
+INSERT INTO student VALUES
+(110, "adam", "Delhi", 76),
+(108, "bob", "Mumbai", 65),
+(124, "casey", "Pune", 94),
+(112, "duke", "Pune", 80);
+
+
+
+-- · Select all students who scored 75+
+
+SELECT * FROM student WHERE marks>75;
+
+-- . Find names of all cities where students are from
+ 
+SELECT DISTINCT city FROM student;
+
+SELECT city FROM student GROUP BY (city);
+  
+-- . Find the maximum marks of students from each city
+
+-- . Find the average of the class
+
+-- · Add a new column grade, assign grade such that :
+
+-- marks > 80, grade = O
+
+-- marks 70-80, grade = A
+
+-- marks 60-70, grade = B
