@@ -58,6 +58,20 @@ FROM users
 GROUP BY age
 HAVING MAX(followers) >= 200;
 
+-- using a having to order by desc and asc
+
+SELECT age,MAX(followers) 
+FROM users 
+GROUP BY age
+HAVING MAX(followers) >= 200
+ORDER BY MAX(followers) DESC;
+
+SELECT age,MAX(followers) 
+FROM users 
+GROUP BY age
+HAVING MAX(followers) >= 200
+ORDER BY age DESC;
+
 CREATE TABLE posts(
 id INT PRIMARY KEY,
 content VARCHAR(100),
