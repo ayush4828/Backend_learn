@@ -109,6 +109,17 @@ ALTER TABLE insta_users
 RENAME TO users;
 SELECT * FROM users;
 
+-- MODIFYING COLUMN  DATATYPE OR CONSTRAIN
+
+ALTER TABLE users
+MODIFY subs INT DEFAULT 5;
+INSERT INTO users
+(id, age, name, email,following)
+VALUES
+(7, 14, "eve", "eve2@yahoo.in",145),
+(8, 16, "farah", "farah2@gmail.com",1000);
+SELECT * FROM users; 
+
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
