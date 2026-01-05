@@ -96,6 +96,11 @@ ALTER TABLE users
 DROP COLUMN city;
 SELECT * FROM users;
 
+-- RENAMING TABLE NAME
+
+ALTER TABLE users
+RENAME TO insta_userS;
+
 
 CREATE TABLE posts(
 id INT PRIMARY KEY,
