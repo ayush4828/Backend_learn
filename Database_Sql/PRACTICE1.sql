@@ -80,12 +80,31 @@ SELECT city FROM student GROUP BY (city);
   
 -- . Find the maximum marks of students from each city
 
+SELECT city , MAX(marks)  FROM student GROUP BY (city);
+
 -- . Find the average of the class
 
+SELECT AVG(marks) FROM student;
+
 -- · Add a new column grade, assign grade such that :
-
 -- marks > 80, grade = O
-
 -- marks 70-80, grade = A
-
 -- marks 60-70, grade = B
+
+ALTER TABLE student
+ADD COLUMN grade VARCHAR(2);
+SELECT * FROM student;
+
+UPDATE student 
+SET grade = "O" 
+WHERE marks >= 80;
+
+UPDATE student 
+SET grade = "A" 
+WHERE marks >= 70 AND marks < 80;
+
+UPDATE student 
+SET grade = "B" 
+WHERE marks >= 60 AND marks < 70;
+
+SELECT * FROM student;
