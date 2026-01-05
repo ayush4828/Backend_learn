@@ -102,6 +102,14 @@ ALTER TABLE users
 RENAME TO insta_userS;
 
 
+-- RENAMING THE COLUMN NAME
+
+
+ALTER TABLE insta_users
+RENAME TO users;
+SELECT * FROM users;
+
+
 CREATE TABLE posts(
 id INT PRIMARY KEY,
 content VARCHAR(100),
