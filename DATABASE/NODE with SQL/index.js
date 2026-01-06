@@ -1,5 +1,10 @@
 const { faker } = require('@faker-js/faker');
 const mysql = require("mysql2");
+const express = require("express");
+const path = require("path")
+const app = express();
+app.set("view engine" , "ejs")
+app.set("views" , path.join(__dirname , "/views"));
 
 
 const connection = mysql.createConnection({
@@ -9,31 +14,62 @@ const connection = mysql.createConnection({
   password: 'Ayush@19102005'
 });
 
-let q = "SHOW TABLES"
+let getRandomuser = ()=>{
+     return [ faker.string.uuid(),
+   faker.internet.username(),
+    faker.internet.email(),
+    faker.internet.password()]
+  };
 
+
+
+
+// let q = "SHOW TABLES"
+
+// let q = "INSERT INTO faked(id , username , email , password) VALUE ? ";
+// let user = ["123" , "ayush" , "ayush@gmail.com" , "abc"];
+// let users = [["1234" , "ayusha" , "ayush@gmail.coma" , "abca"],["1235" , "ayushb" , "ayush@gmail.comb" , "abcb"]];
+
+// let data = []
+
+//   for(let i = 1 ; i<=1000; i++){
+//     data.push(getRandomuser());
+//   }
+
+
+// try{
+//   connection.query(q , [data], (err,result)=>{
+// if(err) throw err;
+//   console.log(result);
+//   console.log(result.length);
+//   console.log(result[0]);
+//   console.log(result[1]);
+  
+// });
+// }
+// catch(err) {
+//   console.log(err);
+// }
+
+// connection.end();
+
+
+app.get("/" , (req,res)=>{
+
+  let q = "SELECT COUNT(*) FROM faked";
 try{
   connection.query(q , (err,result)=>{
 if(err) throw err;
-  console.log(result);
-  console.log(result.length);
-  console.log(result[0]);
-  console.log(result[1]);
-  
+  let data = result[0]["COUNT(*)"];
+  res.render("home.ejs" , {data});
 });
 }
 catch(err) {
   console.log(err);
 }
+});
 
-connection.end();
-// let getRandomuser = ()=>{
-//      return {
-//     id: faker.string.uuid(),
-//     username: faker.internet.username(),
-//     email: faker.internet.email(),
-//     password: faker.internet.password(),
-  
-//   };
-// }
 
-// console.log(getRandomuser());
+app.listen("8080" , ()=>{
+  console.log("listinig on port 8080");
+})
