@@ -5,7 +5,10 @@ const path = require("path")
 const app = express();
 app.set("view engine" , "ejs")
 app.set("views" , path.join(__dirname , "/views"));
+const methodOverride = require("method-override");
 
+app.use(methodOverride("_method"))
+app.use(express.urlencoded({extended:true}));
 
 const connection = mysql.createConnection({
   host: 'localhost',
@@ -68,6 +71,44 @@ catch(err) {
   console.log(err);
 }
 });
+
+app.get("/users" , (req,res)=>{
+
+  let q = "SELECT * FROM faked";
+try{
+  connection.query(q , (err,users)=>{
+  if(err) throw err;
+  console.log(users);
+  res.render("show.ejs" , {users});
+});
+}
+catch(err) {
+  console.log(err);
+}
+});
+
+app.get("/users/:id/edit",(req,res)=>{
+  let {id} = req.params;
+  let q = `SELECT * FROM faked WHERE id = '${id}'`;
+
+  try{
+  connection.query(q , (err,result)=>{
+  if(err) throw err;
+  let user = result[0];
+  res.render("edit.ejs" , {user});
+});
+}
+catch(err) {
+  console.log(err);
+}
+})
+
+
+//update route
+
+app.patch("/users/:id" , (req,res)=>{
+  res.send("seccess");
+})
 
 
 app.listen("8080" , ()=>{
