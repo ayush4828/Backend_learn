@@ -6,6 +6,7 @@ const app = express();
 app.set("view engine" , "ejs")
 app.set("views" , path.join(__dirname , "/views"));
 const methodOverride = require("method-override");
+const { v4: uuidv4 } = require("uuid");
 
 app.use(methodOverride("_method"))
 app.use(express.urlencoded({extended:true}));
@@ -130,6 +131,41 @@ app.patch("/users/:id" , (req,res)=>{
   }
 })
 
+app.get("/users/new" , (req,res)=>{
+  res.render("new.ejs");
+})
+
+app.post("/users" , (req,res)=>{
+  let id = uuidv4();
+  let {username : formUsername , password : formPassword , email : formEmail} = req.body;
+  let q =' INSERT INTO faked (id , username , email ,password) VALUES (?,?,?,?)';
+  let val = [id,formUsername,formEmail,formPassword];
+try{
+connection.query(q , val , (err,result)=>{
+   if(err) throw err;
+   res.redirect("/users");
+  })
+}
+catch(err){
+  console.log(err);
+}
+  
+})
+
+app.delete("/users/:id" , (req,res)=>{
+  let {id} = req.params;
+  let q = `DELETE FROM faked WHERE id = '${id}'`;
+
+  try{
+    connection.query(q , (err,result)=>{
+      if(err) throw err;
+      res.redirect("/users");
+    })
+  }
+  catch(err){
+    console.log(err);
+  }
+})
 app.listen("8080" , ()=>{
   console.log("listinig on port 8080");
 })
