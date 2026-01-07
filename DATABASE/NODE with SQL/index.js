@@ -78,7 +78,6 @@ app.get("/users" , (req,res)=>{
 try{
   connection.query(q , (err,users)=>{
   if(err) throw err;
-  console.log(users);
   res.render("show.ejs" , {users});
 });
 }
@@ -107,9 +106,29 @@ catch(err) {
 //update route
 
 app.patch("/users/:id" , (req,res)=>{
-  res.send("seccess");
+  let {id} = req.params;
+  let{password:formPassword , username:formUsername} = req.body;
+  let q = `SELECT * FROM faked WHERE id = '${id}' `;
+  let p = `UPDATE faked SET username = '${formUsername}' WHERE id = '${id}'`;
+  try{
+     connection.query(q , (err,result)=>{ 
+      if(err) throw err;
+      let user = result[0];
+      if(formPassword != user.password){
+        res.send("incorrect password");
+      }
+      else{
+        connection.query(p , (err,result)=>{
+        if(err) throw err;
+        res.redirect("/users");
+      })
+      }
+     })
+  }
+  catch(err){
+    console.log(err);
+  }
 })
-
 
 app.listen("8080" , ()=>{
   console.log("listinig on port 8080");
