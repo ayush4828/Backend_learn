@@ -11,18 +11,21 @@ This repository contains multiple example folders, sample applications, and prac
 
 The repository is organized into topic-based folders:
 
-backend_learn/<br>
-│<br>
-├── DATABASE/&nbsp;&nbsp;&nbsp;&nbsp;# Node.js with SQL practice<br>
-├── Database_Sql/      &nbsp;&nbsp;&nbsp;&nbsp;                # SQL queries & learning<br>
-├── Ejs/            &nbsp;&nbsp;&nbsp;&nbsp;                   # Express + EJS templating examples<br>
-├── Express/       &nbsp;&nbsp;&nbsp;&nbsp;                    # Express.js basic routing & apps<br>
-├── REST_RESTFUL_APIS/  &nbsp;&nbsp;&nbsp;&nbsp;               # REST API examples<br>
-├── Miscellaneous/    &nbsp;&nbsp;&nbsp;&nbsp;                 # Other backend concepts & practice<br>
-├── Fruits/&nbsp;&nbsp;&nbsp;&nbsp;# Sample mini project<br>
-├── figlet/     &nbsp;&nbsp;&nbsp;&nbsp;                       # Fun console-based examples<br>
-├── instagram using Rest/&nbsp;&nbsp;&nbsp;&nbsp;              # Instagram-style REST API learning<br>
-└── README.md        &nbsp;&nbsp;&nbsp;&nbsp;                  # Repository documentation<br>
+<pre>
+backend_learn/
+│
+├── DATABASE/                 # Node.js with SQL practice
+├── Database_Sql/             # SQL queries & learning
+├── Ejs/                      # Express + EJS templating examples
+├── Express/                  # Express.js basic routing & apps
+├── REST_RESTFUL_APIS/        # REST API examples
+├── Miscellaneous/            # Other backend concepts & practice
+├── Fruits/                   # Sample mini project
+├── figlet/                   # Fun console-based examples
+├── instagram using Rest/     # Instagram-style REST API learning
+└── README.md                 # Repository documentation
+</pre>
+
 
 
 
