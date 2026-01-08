@@ -1,110 +1,164 @@
-# Backend Learn — Learning Backend in 30 Days
+# MongoDB Basics — Learning Notes & Practice
 
-Welcome to **backend_learn** — a hands-on repository created to explore backend development with Node.js, Express.js, databases (SQL & NoSQL), REST APIs, template engines like EJS, and various backend concepts.
-
-This project contains multiple example folders, sample apps, and practice code to help you build and strengthen your backend skills over time. :contentReference[oaicite:1]{index=1}
+This repository/folder contains my **MongoDB learning journey**, covering the fundamentals of MongoDB using the **Mongo Shell (mongosh)**.  
+I learned how MongoDB stores data, performs CRUD operations, and works with documents and collections.
 
 ---
 
-## 📁 Project Structure
+## 📚 Topics Covered
 
-The repository is organized into topic-based folders. Some examples include:
+### 1️⃣ Mongo Shell
+- Introduction to `mongosh`
+- Connecting to MongoDB
+- Running database commands from CLI
 
-DATABASE/ → Node.js with SQL practice
-Database_Sql → SQL queries & learning
-Ejs → Express + EJS templating examples
-Express → Express.js basic routing & apps
-REST_RESTFUL_APIS → REST API examples
-Miscellaneous → Other backend concepts & practice
-Fruits → Sample small project
-figlet → Fun console text examples
-instagram using Rest → Instagram-style REST API learning
+---
+
+### 2️⃣ How MongoDB Stores Data (BSON)
+- MongoDB uses **BSON (Binary JSON)**
+- Faster and more efficient than plain JSON
+- Supports additional data types like `Date`, `ObjectId`, etc.
+
+---
+
+### 3️⃣ Document & Collection
+- **Document** → JSON-like object
+- **Collection** → Group of documents
+- Schema-less structure
+
+Example:
+```js
+{
+  name: "Ayush",
+  age: 21,
+  skills: ["JavaScript", "Node.js"]
+}
+✏️ CRUD Operations
+➕ INSERT Operations
+Insert One
+js
+Copy code
+db.users.insertOne({ name: "Ayush", age: 21 })
+Insert Many
+js
+Copy code
+db.users.insertMany([
+  { name: "Rahul", age: 22 },
+  { name: "Ankit", age: 20 }
+])
+🔍 FIND Operations
+js
+Copy code
+db.users.find()
+db.users.find({ age: { $gt: 20 } })
+db.users.findOne({ name: "Ayush" })
+🔎 Query Operators
+$gt → greater than
+
+$lt → less than
+
+$gte, $lte
+
+$in, $ne
+
+$and, $or
+
+Example:
+
+js
+Copy code
+db.users.find({ age: { $gte: 21 } })
+✏️ UPDATE Operations
+Update One
+js
+Copy code
+db.users.updateOne(
+  { name: "Ayush" },
+  { $set: { age: 22 } }
+)
+Update Many
+js
+Copy code
+db.users.updateMany(
+  { age: { $gt: 20 } },
+  { $inc: { age: 1 } }
+)
+🗑️ DELETE Operations
+Delete One
+js
+Copy code
+db.users.deleteOne({ name: "Ankit" })
+Delete Many
+js
+Copy code
+db.users.deleteMany({ age: { $lt: 20 } })
+📂 Nesting (Embedded Documents)
+MongoDB supports nested objects and arrays.
+
+Example:
+
+js
+Copy code
+db.users.insertOne({
+  name: "Ayush",
+  address: {
+    city: "Ahmedabad",
+    state: "Gujarat"
+  },
+  skills: ["JS", "Node", "MongoDB"]
+})
+🧠 SQL vs MongoDB (Quick Comparison)
+SQL	MongoDB
+Database	Database
+Table	Collection
+Row	Document
+Column	Field
+JOIN	Embedded Documents
+
+🛠️ Tools Used
+MongoDB Community Server
+
+MongoDB Shell (mongosh)
+
+Windows PowerShell
+
+🎯 Learning Outcome
+By completing these topics, I now understand:
+
+MongoDB fundamentals
+
+CRUD operations
+
+Query operators
+
+Nested documents
+
+How MongoDB differs from SQL databases
+
+🚀 Next Steps
+MongoDB with Node.js
+
+Mongoose
+
+REST APIs using Express + MongoDB
+
+Schema design & indexing
+
+📌 Author
+Ayush Patel
+Learning Backend Development 🚀
+
+📄 License
+This project is for learning and educational purposes.
 
 yaml
 Copy code
 
-*(Actual folder names are present in the repo.)* :contentReference[oaicite:2]{index=2}
-
 ---
 
-## 🚀 Features
+If you want, I can also:
+- 🔥 Make a **combined README** for your full backend repo  
+- 🧠 Add **interview-oriented MongoDB notes**
+- 🚀 Create a **MongoDB + Node.js mini project README**
 
-This repository helps you learn:
-
-- Node.js server fundamentals  
-- Express.js backend framework  
-- Creating RESTful APIs (GET, POST, PUT, DELETE)  
-- Working with databases (SQL & NoSQL)
-- Templating with EJS
-- Building small backend projects & concepts  
-- Structure of a backend project
-
----
-
-## 🛠️ How to Use / Run Examples
-
-Follow these general steps to run any backend example folder:
-
-1. **Navigate to a specific folder:**
-   ```bash
-   cd <folder-name>
-Install dependencies:
-
-bash
-Copy code
-npm install
-Start the server (if an entry script exists):
-
-bash
-Copy code
-npm start
-or
-
-bash
-Copy code
-node index.js
-Use Postman, Insomnia, browser, or curl to test APIs.
-
-🧠 Tips
-✔ Use nodemon for auto reload while developing:
-
-bash
-Copy code
-npm i -g nodemon
-nodemon <entry-file>
-✔ You can modularize routes and controllers for cleaner code.
-
-✔ Use environment variables (.env) for storing sensitive config like database URIs.
-
-📚 Learning Goals
-This repo is designed to help you:
-
-📌 Understand backend fundamentals
-📌 Learn Express routing & middleware
-📌 Create REST APIs
-📌 Connect Node.js with databases
-📌 Work with both SQL & NoSQL
-📌 Practice real backend scenarios
-
-📌 Technologies Used
-Node.js
-
-Express.js
-
-JavaScript
-
-EJS
-
-SQL / Databases
-
-📢 Contributions
-This repo is for personal learning, but you’re welcome to:
-
-✅ Suggest improvements
-✅ Add examples
-✅ Share better practices
-
-If you decide to contribute, open a Pull Request or submit issues with your idea.
-
-📄 License
-This project is open-source and available to learn from and build upon.
+Just tell me 👍
