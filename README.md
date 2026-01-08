@@ -27,78 +27,69 @@ I learned how MongoDB stores data, performs CRUD operations, and works with docu
 - Schema-less structure
 
 Example:
-```js
+```
 {
   name: "Ayush",
   age: 21,
   skills: ["JavaScript", "Node.js"]
 }
+
 ✏️ CRUD Operations
-➕ INSERT Operations
-Insert One
-js
-Copy code
+
+
+➕ INSERT Operations:
+
+Insert One : 
 db.users.insertOne({ name: "Ayush", age: 21 })
-Insert Many
-js
-Copy code
+
+Insert Many:
 db.users.insertMany([
   { name: "Rahul", age: 22 },
   { name: "Ankit", age: 20 }
 ])
-🔍 FIND Operations
-js
-Copy code
+
+🔍 FIND Operations:
+
 db.users.find()
 db.users.find({ age: { $gt: 20 } })
 db.users.findOne({ name: "Ayush" })
-🔎 Query Operators
+
+🔎 Query Operators:
 $gt → greater than
-
 $lt → less than
-
 $gte, $lte
-
 $in, $ne
-
 $and, $or
 
 Example:
 
-js
-Copy code
 db.users.find({ age: { $gte: 21 } })
-✏️ UPDATE Operations
-Update One
-js
-Copy code
+
+✏️ UPDATE Operations:
+
+Update One:
 db.users.updateOne(
   { name: "Ayush" },
   { $set: { age: 22 } }
 )
-Update Many
-js
-Copy code
+Update Many:
 db.users.updateMany(
   { age: { $gt: 20 } },
   { $inc: { age: 1 } }
 )
-🗑️ DELETE Operations
-Delete One
-js
-Copy code
+
+🗑️ DELETE Operations:
+
+Delete One:
 db.users.deleteOne({ name: "Ankit" })
-Delete Many
-js
-Copy code
+
+Delete Many:
 db.users.deleteMany({ age: { $lt: 20 } })
-📂 Nesting (Embedded Documents)
+
+📂 Nesting (Embedded Documents):
 MongoDB supports nested objects and arrays.
 
 Example:
-
-js
-Copy code
 db.users.insertOne({
   name: "Ayush",
   address: {
@@ -151,8 +142,7 @@ Learning Backend Development 🚀
 📄 License
 This project is for learning and educational purposes.
 
-yaml
-Copy code
+
 
 ---
 
