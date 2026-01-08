@@ -88,6 +88,8 @@ db.users.deleteMany({ age: { $lt: 20 } })
 
 ```
 
+<br><br><br>
+
 📂 Nesting (Embedded Documents):
 
 MongoDB supports nested objects and arrays.
@@ -134,37 +136,31 @@ db.users.insertOne({
   </tbody>
 </table>
 
+<br><br>
 
-🛠️ Tools Used
+🛠️ Tools Used : 
 MongoDB Community Server
-
 MongoDB Shell (mongosh)
-
 Windows PowerShell
 
-🎯 Learning Outcome
+🎯 Learning Outcome:
 By completing these topics, I now understand:
-
 MongoDB fundamentals
-
 CRUD operations
-
 Query operators
-
 Nested documents
-
 How MongoDB differs from SQL databases
 
-🚀 Next Steps
+<br>
+
+🚀 Next Steps:
 MongoDB with Node.js
-
 Mongoose
-
 REST APIs using Express + MongoDB
-
 Schema design & indexing
 
-📌 Author
+<br>
+📌 Author:
 Ayush Patel
 Learning Backend Development 🚀
 
