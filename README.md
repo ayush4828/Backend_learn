@@ -33,6 +33,7 @@ Example:
   age: 21,
   skills: ["JavaScript", "Node.js"]
 }
+```
 
 ✏️ CRUD Operations
 
@@ -40,20 +41,25 @@ Example:
 ➕ INSERT Operations:
 
 Insert One : 
+```
 db.users.insertOne({ name: "Ayush", age: 21 })
+```
 
 Insert Many:
+```
 db.users.insertMany([
   { name: "Rahul", age: 22 },
   { name: "Ankit", age: 20 }
 ])
+```
 
 🔍 FIND Operations:
-
+```
 db.users.find()
 db.users.find({ age: { $gt: 20 } })
 db.users.findOne({ name: "Ayush" })
-
+```
+<br>
 🔎 Query Operators:
 $gt → greater than
 $lt → less than
@@ -62,30 +68,35 @@ $in, $ne
 $and, $or
 
 Example:
-
+```
 db.users.find({ age: { $gte: 21 } })
+```
 
 ✏️ UPDATE Operations:
 
 Update One:
+```
 db.users.updateOne(
   { name: "Ayush" },
   { $set: { age: 22 } }
 )
+```
 Update Many:
+```
 db.users.updateMany(
   { age: { $gt: 20 } },
   { $inc: { age: 1 } }
 )
-
+```
 🗑️ DELETE Operations:
 
 Delete One:
+```
 db.users.deleteOne({ name: "Ankit" })
-
+```
 Delete Many:
+```
 db.users.deleteMany({ age: { $lt: 20 } })
-
 ```
 
 <br><br><br>
