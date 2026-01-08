@@ -86,6 +86,8 @@ db.users.deleteOne({ name: "Ankit" })
 Delete Many:
 db.users.deleteMany({ age: { $lt: 20 } })
 
+```
+
 📂 Nesting (Embedded Documents):
 MongoDB supports nested objects and arrays.
 
