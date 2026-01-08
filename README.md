@@ -49,57 +49,55 @@ This repository helps you learn:
 Follow these general steps to run any backend example:
 
 1. **Navigate to a folder**
-   ```bash
+   ```
    cd <folder-name>
-Install dependencies
+   ```
+<br>
+Install dependencies:
 
-bash
-Copy code
+```
 npm install
-Start the server
+```
+<br>
 
-bash
-Copy code
+Start the server:
+```
 npm start
+```
+<br>
+
 or
 
-bash
-Copy code
+```
 node index.js
-Test APIs
+```
+<br>
+
+Test APIs:
 
 Browser
-
 Postman
-
 Insomnia
-
 curl
 
 🧠 Tips
 ✔ Use nodemon for auto-reloading during development:
-
-bash
-Copy code
+```
 npm install -g nodemon
 nodemon <entry-file>
+```
+<br>
 ✔ Modularize routes and controllers for cleaner code.
-
 ✔ Use environment variables (.env) for sensitive data like database URLs.
 
-📚 Learning Goals
+📚 Learning Goals:
+
 This repository is designed to help you:
-
 📌 Understand backend fundamentals
-
 📌 Learn Express routing & middleware
-
 📌 Build RESTful APIs
-
 📌 Connect Node.js with databases
-
 📌 Work with both SQL & NoSQL
-
 📌 Practice real-world backend scenarios
 
 
