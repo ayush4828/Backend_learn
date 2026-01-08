@@ -89,6 +89,7 @@ db.users.deleteMany({ age: { $lt: 20 } })
 ```
 
 📂 Nesting (Embedded Documents):
+
 MongoDB supports nested objects and arrays.
 
 Example:
@@ -100,13 +101,39 @@ db.users.insertOne({
   },
   skills: ["JS", "Node", "MongoDB"]
 })
-🧠 SQL vs MongoDB (Quick Comparison)
-SQL	MongoDB
-Database	Database
-Table	Collection
-Row	Document
-Column	Field
-JOIN	Embedded Documents
+
+🧠 SQL vs MongoDB (Quick Comparison):
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>SQL</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Database</td>
+      <td>Database</td>
+    </tr>
+    <tr>
+      <td>Table</td>
+      <td>Collection</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Field</td>
+    </tr>
+    <tr>
+      <td>JOIN</td>
+      <td>Embedded Documents</td>
+    </tr>
+  </tbody>
+</table>
+
 
 🛠️ Tools Used
 MongoDB Community Server
