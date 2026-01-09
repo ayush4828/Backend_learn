@@ -21,3 +21,11 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User",userSchema);
+const Employee = mongoose.model("Employee",userSchema);
+
+//inserting single user data at a time
+
+const user1 = new User({name:"Ayush" , email : "ayush@gmnail.com" , age:20 });
+const user2 = new User({name:"vinit" , email : "vinit@gmnail.com" , age:21 });
+user1.save();
+user2.save();
