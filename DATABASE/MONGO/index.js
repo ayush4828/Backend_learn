@@ -49,8 +49,14 @@ const User = mongoose.model("User",userSchema);
 // ])
 // .then(res=>{console.log(res)}).catch((err)=>{console.log(err)});
 
-// find
-User.find({}).then((res)=>{
+// // find
+// User.find({}).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{console.log(err)})
+
+// findone
+
+User.findOne({age : {$gt : 20}}).then((res)=>{
     console.log(res);
 }).catch((err)=>{console.log(err)})
 
