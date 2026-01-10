@@ -19,10 +19,12 @@ const bookSchema = new mongoose.Schema({
     },
 
     author : {
-        type : String
+        type : String,
+        maxLength : 10
     },
     price:{
-        type:Number
+        type:Number,
+        default:1
     }
 
 })
@@ -35,3 +37,6 @@ book1.save().then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 const book2 = new Book({title:"hoaaa" , author:"ayushpatel" , price:"545865"});
 book2.save().then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
+
+const book3 = new Book({title:"wolaaaa" , author:"ayush"});
+book3.save().then(res=>{console.log(res)}).catch(err=>{console.log(err)});
