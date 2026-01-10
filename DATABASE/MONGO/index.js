@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model("User",userSchema);
+
+
+
+
 // const Employee = mongoose.model("Employee",userSchema);
 
 //inserting single user data at a time
@@ -38,10 +42,15 @@ const User = mongoose.model("User",userSchema);
 
 //inserting multiple data at a time
 
-User.insertMany([
-{name:"jainik" , email:"jainik@gmail.com" , age : 20 },
-{name:"divy" , email:"divy@gmail.com" , age : 21},
-{name:"pratham" , email:"pratham@gmail.com" , age : 19}
-])
-.then(res=>{console.log(res)}).catch((err)=>{console.log(err)});
+// User.insertMany([
+// {name:"jainik" , email:"jainik@gmail.com" , age : 20 },
+// {name:"divy" , email:"divy@gmail.com" , age : 21},
+// {name:"pratham" , email:"pratham@gmail.com" , age : 19}
+// ])
+// .then(res=>{console.log(res)}).catch((err)=>{console.log(err)});
+
+// find
+User.find({}).then((res)=>{
+    console.log(res);
+}).catch((err)=>{console.log(err)})
 
