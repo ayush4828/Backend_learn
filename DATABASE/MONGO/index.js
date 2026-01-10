@@ -93,3 +93,11 @@ User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res
 // Deleteone
 
 User.deleteOne({name : "Ayush"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+
+// deleteMany
+
+ User.deleteMany({name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
