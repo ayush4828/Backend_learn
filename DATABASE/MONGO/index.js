@@ -86,4 +86,10 @@ User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res
 
 // // find by id  and update but this time using option. new:false by default.before when we find there first find and then update but if we do new:true then first update and find
 
-User.findByIdAndUpdate("6961523fe6db44b764c1dd58",{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+// User.findByIdAndUpdate("6961523fe6db44b764c1dd58",{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+
+// Deleteone
+
+User.deleteOne({name : "Ayush"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
