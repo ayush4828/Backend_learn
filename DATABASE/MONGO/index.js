@@ -82,3 +82,8 @@ const User = mongoose.model("User",userSchema);
 // // find and update but this time using option. new:false by default.before when we find there first find and then update but if we do new:true then first update and find
 // // [options.new=false] Boolean» if true, return the modified document rather than the original!
 User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+// // find by id  and update but this time using option. new:false by default.before when we find there first find and then update but if we do new:true then first update and find
+
+User.findByIdAndUpdate("6961523fe6db44b764c1dd58",{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
