@@ -101,3 +101,7 @@ User.deleteOne({name : "Ayush"}).then(res=>{console.log(res)}).catch(err=>{conso
  User.deleteMany({name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
 
+
+// find by id  and delete.
+
+User.findByIdAndDelete("6961523fe6db44b764c1dd57").then(res=>{console.log(res)}).catch(err=>{console.log(err)});
