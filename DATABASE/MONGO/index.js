@@ -62,13 +62,18 @@ const User = mongoose.model("User",userSchema);
 
 // findbyid
 
-User.findById("6961539996c7f2c56d140134").then((res)=>{
-    console.log(res);
-}).catch((err)=>{console.log(err)})
+// User.findById("6961539996c7f2c56d140134").then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{console.log(err)})
 
-// update One
+// // update One
 
-User.updateOne({name:"jainik"},{age : 95}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+// User.updateOne({name:"jainik"},{age : 95}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
-//update many
-User.updateMany({age:21},{name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+// //update many
+// User.updateMany({age:21},{name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+// //update and find using : User.findOneAndUpdate
+
+User.findOneAndUpdate({age:21},{name : "alok"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
