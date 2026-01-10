@@ -66,3 +66,9 @@ User.findById("6961539996c7f2c56d140134").then((res)=>{
     console.log(res);
 }).catch((err)=>{console.log(err)})
 
+// update One
+
+User.updateOne({name:"jainik"},{age : 95}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+//update many
+User.updateMany({age:21},{name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
