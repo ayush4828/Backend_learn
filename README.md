@@ -267,11 +267,176 @@ How MongoDB differs from SQL databases
 
 <br>
 
-🚀 Next Steps:
-MongoDB with Node.js
-Mongoose
-REST APIs using Express + MongoDB
-Schema design & indexing
+# 📘 MongoDB with Mongoose (Part 2)
+
+This repository contains my learning notes and practice code for **MongoDB using Mongoose**.  
+It covers schema design, models, CRUD operations, validations, and update behaviors in Mongoose.
+
+---
+
+## 📌 Topics Covered
+
+### 1️⃣ What is Mongoose?
+- Mongoose is an **ODM (Object Data Modeling) library** for MongoDB and Node.js
+- Provides:
+  - Schema-based structure
+  - Data validation
+  - Built-in CRUD methods
+- Acts as a bridge between **MongoDB** and **Node.js**
+
+---
+
+### 2️⃣ Installation & Setup
+Steps to set up Mongoose in a Node.js project:
+
+```
+npm init -y
+npm install mongoose
+```
+
+Basic connection example:
+```
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/testDB")
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.log(err));
+```
+
+3️⃣ Schema
+A Schema defines the structure of documents
+
+Specifies:
+Fields
+Data types
+Validations
+
+Example:
+
+```
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  email: String
+});
+```
+
+4️⃣ Models
+A Model is created using a schema
+It represents a collection in MongoDB
+
+```
+const User = mongoose.model("User", userSchema);
+```
+
+5️⃣ Insert in Mongoose
+Insert a single document:
+```
+const user = new User({
+  name: "Ayush",
+  age: 21,
+  email: "ayush@gmail.com"
+});
+user.save();
+```
+
+6️⃣ Insert Multiple Documents
+
+```
+User.insertMany([
+  { name: "A", age: 20 },
+  { name: "B", age: 22 }
+]);
+```
+
+7️⃣ Find in Mongoose
+Retrieve documents from database:
+```
+User.find({});
+User.find({ age: 21 });
+User.findOne({ name: "Ayush" });
+User.findById("ObjectId");
+```
+
+8️⃣ Update in Mongoose
+```
+User.updateOne(
+  { name: "Ayush" },
+  { age: 22 }
+);
+```
+
+9️⃣ FindAndUpdate
+Find and update in one step:
+```
+User.findOneAndUpdate(
+  { name: "Ayush" },
+  { age: 23 },
+  { new: true }
+);
+```
+🔟 Delete in Mongoose
+```
+User.deleteOne({ name: "Ayush" });
+User.findByIdAndDelete("ObjectId");
+```
+1️⃣1️⃣ Schema Validations
+Used to ensure data correctness
+```
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  age: {
+    type: Number,
+    min: 18
+  }
+});
+```
+1️⃣2️⃣ Schema Type Options
+Common options:
+required
+default
+min / max
+enum
+unique
+
+Example:
+```
+email: {
+  type: String,
+  required: true,
+  unique: true
+}
+```
+
+1️⃣3️⃣ Validation in Update & Errors
+Validations do not run by default during update.
+Enable validation manually:
+```
+User.findOneAndUpdate(
+  { name: "Ayush" },
+  { age: 15 },
+  { runValidators: true }
+);
+```
+🚀 Key Learnings
+Mongoose simplifies MongoDB operations
+Schema ensures structured and validated data
+CRUD operations are easy and readable
+Validations are essential for data integrity
+
+📚 Useful Commands
+```
+mongod
+```
+```
+mongo
+```
+```
+node app.js
+```
+
 
 <br>
 📌 Author:
