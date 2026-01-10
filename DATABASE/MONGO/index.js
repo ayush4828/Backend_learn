@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+// mongoose.connect('mongodb://127.0.0.1:27017/test')
 
 
 main().then(()=>{
@@ -81,7 +81,7 @@ const User = mongoose.model("User",userSchema);
 
 // // find and update but this time using option. new:false by default.before when we find there first find and then update but if we do new:true then first update and find
 // // [options.new=false] Boolean» if true, return the modified document rather than the original!
-User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+// User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
 
 // // find by id  and update but this time using option. new:false by default.before when we find there first find and then update but if we do new:true then first update and find
@@ -90,18 +90,24 @@ User.findOneAndUpdate({age:21},{age : 69},{new:true}).then(res=>{console.log(res
 
 
 
-// Deleteone
+// // Deleteone
 
-User.deleteOne({name : "Ayush"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
-
-
-
-// deleteMany
-
- User.deleteMany({name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+// User.deleteOne({name : "Ayush"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
 
 
 
-// find by id  and delete.
+// // deleteMany
 
-User.findByIdAndDelete("6961523fe6db44b764c1dd57").then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+//  User.deleteMany({name : "gandhiji"}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+
+// // find by id  and delete.
+
+// User.findByIdAndDelete("6961523fe6db44b764c1dd57").then(res=>{console.log(res)}).catch(err=>{console.log(err)});
+
+
+
+// //findOneAndDelete
+
+User.findOneAndDelete({age:65}).then(res=>{console.log(res)}).catch(err=>{console.log(err)});
