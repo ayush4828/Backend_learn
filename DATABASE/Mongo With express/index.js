@@ -7,7 +7,7 @@ const Chat = require("./models/chat.js");
 app.set("views" , path.join(__dirname,"views"))
 app.set("view engine" , "ejs")
 app.use(express.static(path.join(__dirname , "public")))
-
+app.use(express.urlencoded({ extended:true }))
 main().then((res)=>{console.log("connection successful")}).catch(err => console.log(err));
 
 async function main() {
@@ -30,6 +30,20 @@ app.get("/chats" , async (req,res)=>{
     // res.send("success")
     res.render("index.ejs" , {chats});
 
+})
+
+app.get("/chats/new" , (req,res)=>{
+    res.render("new.ejs");
+})
+
+app.post("/chats" , async(req,res)=>{
+    let {from , to , msg} = req.body;
+    let newChat = new Chat({
+        from:from,msg:msg,to:to,date : new Date()
+    })
+   await newChat.save();
+
+   res.redirect("/chats")
 })
 
 
