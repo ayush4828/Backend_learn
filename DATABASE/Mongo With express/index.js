@@ -39,7 +39,7 @@ app.get("/chats/new" , (req,res)=>{
 app.post("/chats" , async(req,res)=>{
     let {from , to , msg} = req.body;
     let newChat = new Chat({
-        from:from,msg:msg,to:to,date : new Date()
+        from:from,msg:msg,to:to , created_at : new Date()
     })
    await newChat.save();
 
