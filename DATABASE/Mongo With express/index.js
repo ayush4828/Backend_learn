@@ -65,6 +65,12 @@ app.put("/chats/:id" , async (req,res)=>{
     res.redirect("/chats")
 })
 
+app.delete("/chats/:id" , async (req,res)=>{
+    let {id} = req.params;
+    await Chat.findByIdAndDelete(id);
+    res.redirect("/chats")
+})
+
 app.listen(8080,()=>{
     console.log("server is listning on 8080")
 })
