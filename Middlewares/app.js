@@ -52,7 +52,7 @@ app.get("/random" , (req,res)=>{
 
 //Error 404
 app.use((req,res)=>{
-    res.send("error 404 Page Not Found")
+    res.status(404).send("error 404 Page Not Found")
 })
 
 app.listen(8080 , ()=>{
