@@ -21,33 +21,52 @@ const app = express();
 
 //utility middleware // logger
 
-app.use((req,res,next)=>{
-   req.time =new Date(Date.now()).toString();
-   console.log(req.method , req.hostname , req.path , req.time);
-   next();
-})
+// app.use((req,res,next)=>{
+//    req.time =new Date(Date.now()).toString();
+//    console.log(req.method , req.hostname , req.path , req.time);
+//    next();
+// })
 
 
 
-app.use( "/random" , (req,res,next)=>{
+// app.use( "/random" , (req,res,next)=>{
   
-   console.log("on the route random");
-   next();
-})
+//    console.log("on the route random");
+//    next();
+// })
 
-app.get("/" , (req,res)=>{
-    res.send("on root /")
-})
+// app.get("/" , (req,res)=>{
+//     res.send("on root /")
+// })
 
-app.get("/random" , (req,res)=>{
-    res.send("on route random")
-})
+// app.get("/random" , (req,res)=>{
+//     res.send("on route random")
+// })
 
 // app.use((req,res,next)=>{
 //    req.time =new Date(Date.now()).toString();
 //    console.log(req.method , req.hostname , req.path , req.time);
 //    next();
 // })  if we write after requested path then this will not print on  the console
+
+app.use("/api" , (req,res,next)=>{
+   
+    let { token} = req.query;
+
+    if(token === "giveaccess"){
+        next()
+    }
+    else{
+        res.send("ACCESS DENIED")
+    }
+})
+
+
+app.get("/api" , (req,res)=>{
+
+    res.send("data ")
+})
+
 
 
 //Error 404
