@@ -3,17 +3,21 @@ const app = express();
 
 
 
-app.use((req,res)=>{
-    let{query} = req.query;
-    
-    if(query){
-        res.send( `on the middleware and query is ${query}`)
-    }
-    else{
-    res.send(`on the middleware`);
-}
+app.use((req,res,next)=>{
+   
+   console.log(`on the middleware 1`);
+   next();
+//    return next(); // we can also write this for returning next()
+//    console.log("after next()") possible but not prefer
 })
 
+
+app.use((req,res,next)=>{
+   
+   console.log(`on the middleware 2`);
+   next();
+
+})
 app.get("/" , (req,res)=>{
     res.send("on root /")
 })
