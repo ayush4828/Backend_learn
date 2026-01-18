@@ -49,6 +49,12 @@ app.get("/random" , (req,res)=>{
 //    next();
 // })  if we write after requested path then this will not print on  the console
 
+
+//Error 404
+app.use((req,res)=>{
+    res.send("error 404 Page Not Found")
+})
+
 app.listen(8080 , ()=>{
     console.log("server start success")
 })
